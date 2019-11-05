@@ -1,36 +1,31 @@
-# The directory Mix will write compiled artifacts to.
-/_build/
-
-# If you run "mix test --cover", coverage assets end up here.
-/cover/
-
-# The directory Mix downloads your dependencies sources to.
-/deps/
-
-# Where 3rd-party dependencies like ExDoc output generated docs.
-/doc/
-
-# Ignore .fetch files in case you like to edit your project deps locally.
+### Elixir ###
+/_build
+/cover
+/deps
+/doc
 /.fetch
-
-# If the VM crashes, it generates a dump, let's ignore it too.
 erl_crash.dump
-
-# Also ignore archive artifacts (built via "mix archive.build").
 *.ez
+*.beam
+/config/*.secret.exs
+.elixir_ls/
 
-# Ignore package tarball (built via "mix hex.build").
-rumbl-*.tar
+### Elixir Patch ###
 
-# If NPM crashes, it generates a log, let's ignore it too.
-npm-debug.log
+# Temporary files
+/tmp
 
-# The directory NPM downloads your dependencies sources to.
-/assets/node_modules/
+# Static artifacts
+/node_modules
+/assets/node_modules
 
-# Since we are building assets from assets/,
+# Since we are building assets from web/static,
 # we ignore priv/static. You may want to comment
 # this depending on your deployment strategy.
 /priv/static/
 
-/.elixir_ls
+# Installer-related files
+/installer/_build
+/installer/tmp
+/installer/doc
+/installer/deps
