@@ -6,6 +6,7 @@ defmodule Rumbl.Multimedia.Video do
     field :description, :string
     field :title, :string
     field :url, :string
+
     belongs_to :user, Rumbl.Accounts.User
     belongs_to :category, Rumbl.Multimedia.Category
 
