@@ -12,17 +12,17 @@ defmodule Rumbl.TestHelpers do
       attrs
       |> Enum.into(%{
         name: "some name",
-        username: "user#{System.unique_integer()}",
-        password: "some_password"
+        username: "user#{System.unique_integer([:positive])}",
+        password: attrs[:password] || "supersecret"
       })
-      |> Accounts.registe_user()
+      |> Accounts.register_user()
 
     user
   end
 
   def video_fixture(%Accounts.User{} = user, attrs \\ %{}) do
     attrs =
-      Enum.into(%{
+      Enum.into(attrs, %{
         description: "some description",
         title: "some title",
         url: "some url"
